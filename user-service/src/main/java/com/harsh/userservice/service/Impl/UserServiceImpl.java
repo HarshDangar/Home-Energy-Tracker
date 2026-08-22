@@ -16,9 +16,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     public UserDto createUser(UserDto userDto) {
-        log.info("Creating user: {}", userDto);
-
-        User user = User.builder()
+        final User createdUser = User.builder()
                 .name(userDto.getName())
                 .surname(userDto.getSurname())
                 .email(userDto.getEmail())
@@ -27,8 +25,8 @@ public class UserServiceImpl implements UserService {
                 .energyAlertingThreshold(userDto.getEnergyAlertingThreshold())
                 .build();
 
-        User savedUser = userRepository.save(user);
-        return toDto(savedUser);
+        final User saved = userRepository.save(createdUser);
+        return toDto(saved);
     }
 
     public UserDto getUserById(Long id) {
