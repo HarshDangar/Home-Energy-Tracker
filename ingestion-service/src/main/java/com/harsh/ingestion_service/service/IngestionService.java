@@ -1,7 +1,7 @@
 package com.harsh.ingestion_service.service;
 
 import com.harsh.ingestion_service.domain.dto.EnergyUsageDto;
-import com.harsh.ingestion_service.kafka.event.EnergyUsageEvent;
+import com.harsh.kafka.event.EnergyUsageEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
